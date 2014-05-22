@@ -12,6 +12,9 @@ var paths = {
     scripts: [
         'js/app/**/*.js'
     ],
+    tests: [
+        'js/tests/**/*.js'
+    ],
     concatDist: [
         'js/vendor/jquery/jquery.min.js',
         'js/vendor/handlebars/handlebars.js',
@@ -57,7 +60,7 @@ gulp.task('transpile:app', function(){
 });
 
 gulp.task('transpile:test', function(){
-    return gulp.src(paths.scripts)
+    return gulp.src(paths.tests)
         .pipe(transpiler({
             type: "amd",
             moduleName: "js/tests/"
