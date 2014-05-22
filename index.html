@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ember.js + grunt</title>
+</head>
+<body>
+
+<script src="js/dist/deps.min.js"></script>
+
+<script src="js/vendor/jquery-mockjax/jquery.mockjax.js"></script>
+<script>
+
+var fake = [{firstName: "grunt", lastName: "cli"}, {firstName: "ember", lastName: "js"}];
+$.mockjaxSettings.logging = false;
+$.mockjaxSettings.responseTime = 0;
+$.mockjax({
+  url: '/api/people',
+  dataType: 'json',
+  responseText: fake
+});
+
+</script>
+
+<script>
+
+window.App = require('js/app')["default"].create();
+
+</script>
+
+</body>
+</html>

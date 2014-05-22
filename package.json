@@ -1,0 +1,24 @@
+{
+    "dependencies": {
+        "testem": "*",
+        "gulp-es6-module-transpiler": "*",
+        "gulp": "*",
+        "gulp-debug": "*",
+        "gulp-util": "*",
+        "gulp-coffee": "*",
+        "gulp-coffeelint": "*",
+        "coffee-script": "*",
+        "gulp-concat": "*",
+        "gulp-rev": "*",
+        "gulp-uglify": "*",
+        "gulp-ember-handlebars": "*"
+    },
+    "devDependencies": {
+        "gulp-karma": "*",
+        "karma-phantomjs-launcher": "*",
+        "karma-chrome-launcher": "*",
+        "karma-coffee-preprocessor": "*",
+        "karma-qunit": "*",
+        "karma": "*"
+    }
+}

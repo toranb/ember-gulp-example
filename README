@@ -1,0 +1,18 @@
+A simple ember.js app using gulp for the client side build step
+
+
+To run the ember.js locally
+
+    npm install
+    export PATH="./node_modules/.bin:$PATH"
+    gulp local
+    python -m SimpleHTTPServer 3000
+
+    visit http://localhost:3000 to see the running app
+
+
+To run the javascript tests
+
+    npm install
+    export PATH="./node_modules/.bin:$PATH"
+    gulp test
