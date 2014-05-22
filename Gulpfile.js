@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var debug = require('gulp-debug');
+var karma = require('gulp-karma');
 var concat = require('gulp-concat');
 var handlebars = require('gulp-ember-handlebars');
 var transpiler = require('gulp-es6-module-transpiler');
@@ -75,5 +76,13 @@ gulp.task('emberhandlebars', function(){
         .pipe(gulp.dest('js/dist/'));
 });
 
+gulp.task('karma', function(){
+    return gulp.src('js/dist/deps.min.js')
+        .pipe(karma({
+            configFile: 'karma.conf.js',
+            action: 'run'
+        }));
+});
+
 gulp.task('local', ['transpile:app', 'emberhandlebars', 'concat:dist'])
-gulp.task('test', ['transpile:app', 'transpile:test', 'emberhandlebars', 'concat:test'])
+gulp.task('test', ['transpile:app', 'transpile:test', 'emberhandlebars', 'concat:test', 'karma'])

@@ -16,6 +16,7 @@
   },
   "devDependencies": {
         "gulp-karma": "*",
+        "karma-qunit-special-blend": "*",
         "karma-phantomjs-launcher": "*",
         "karma-chrome-launcher": "*",
         "karma-coffee-preprocessor": "*",
