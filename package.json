@@ -1,5 +1,6 @@
 {
-    "dependencies": {
+  "dependencies": {
+        "bower": "*",
         "testem": "*",
         "gulp-es6-module-transpiler": "*",
         "gulp": "*",
@@ -12,13 +13,16 @@
         "gulp-rev": "*",
         "gulp-uglify": "*",
         "gulp-ember-handlebars": "*"
-    },
-    "devDependencies": {
+  },
+  "devDependencies": {
         "gulp-karma": "*",
         "karma-phantomjs-launcher": "*",
         "karma-chrome-launcher": "*",
         "karma-coffee-preprocessor": "*",
         "karma-qunit": "*",
         "karma": "*"
-    }
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
 }
