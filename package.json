@@ -6,6 +6,7 @@
         "gulp": "*",
         "gulp-debug": "*",
         "gulp-util": "*",
+        "gulp-filter": "*",
         "gulp-coffee": "*",
         "gulp-coffeelint": "*",
         "coffee-script": "*",

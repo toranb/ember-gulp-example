@@ -1,5 +1,13 @@
 A simple ember.js app using gulp for the client side build step
 
+**ATTN: non working code**
+
+At this time the gulp module used to transpile from ES6
+does not yet have a way to prefix the modules. This is required
+to get this ember example working. Until the issue below is corrected
+this will be a non working example.
+
+https://github.com/ryanseddon/gulp-es6-module-transpiler/issues/7
 
 To run the ember.js app locally
 

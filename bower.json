@@ -5,6 +5,7 @@
     "jquery": "1.9.1",
     "handlebars": "1.2.1",
     "ember": "1.5.0",
+    "ember-loader": "*",
     "jquery-mockjax": "*"
   }
 }
