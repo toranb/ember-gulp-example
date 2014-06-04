@@ -33,33 +33,33 @@ var paths = {
 };
 
 var filter = gulpFilter(function(file) {
-  return file.path.indexOf('vendor') === -1;
+  var vendor = file.path.indexOf('vendor') === -1;
+  var templates = file.path.indexOf('dist') === -1;
+  return vendor && templates;
 });
 
-gulp.task('concat:dist', function(){
+gulp.task('default', ['emberhandlebars'], function(){
     return gulp.src(paths.concatDist)
         .pipe(filter)
         .pipe(transpiler({
             type: "amd",
+            prefix: "js"
         }))
         .pipe(filter.restore())
         .pipe(concat('deps.min.js'))
         .pipe(gulp.dest('js/dist/'));
 });
 
-gulp.task('concat:test', function(){
+gulp.task('test', ['emberhandlebars'], function(){
     return gulp.src(paths.concatTest)
         .pipe(filter)
         .pipe(transpiler({
             type: "amd",
+            prefix: "js/tests"
         }))
         .pipe(filter.restore())
         .pipe(concat('deps.min.js'))
-        .pipe(gulp.dest('js/dist/'));
-});
-
-gulp.task('karma', function(){
-    return gulp.src('js/dist/deps.min.js')
+        .pipe(gulp.dest('js/dist/'))
         .pipe(karma({
             configFile: 'karma.conf.js',
             action: 'run'
@@ -72,6 +72,3 @@ gulp.task('emberhandlebars', function(){
         .pipe(concat('tmpl.min.js'))
         .pipe(gulp.dest('js/dist/'));
 });
-
-gulp.task('default', ['emberhandlebars', 'concat:dist'])
-gulp.task('test', ['emberhandlebars', 'concat:test', 'karma'])
