@@ -24,11 +24,13 @@ var paths = {
         'js/vendor/jquery/jquery.min.js',
         'js/vendor/handlebars/handlebars.js',
         'js/vendor/ember/ember.js',
+        'js/vendor/jquery-mockjax/jquery.mockjax.js',
         'js/vendor/ember-loader/loader.js',
         'vendor/ember-resolver.js',
         'js/dist/tmpl.min.js',
         'js/app/**/*.js',
-        'js/tests/**/*.js'
+        'js/tests/**/*.js',
+        'vendor/test-loader.js'
     ]
 };
 
@@ -55,7 +57,7 @@ gulp.task('test', ['emberhandlebars'], function(){
         .pipe(filter)
         .pipe(transpiler({
             type: "amd",
-            prefix: "js/tests"
+            prefix: "js"
         }))
         .pipe(filter.restore())
         .pipe(concat('deps.min.js'))

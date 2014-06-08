@@ -1,6 +1,6 @@
 document.write('<div id="ember-testing-container"><div id="ember-testing"></div></div>');
 
-startApp = require('js/tests/helpers/start-app')['default'];
+startApp = require('js/helpers/start-app')['default'];
 
 function missing(selector) {
     var error = "element " + selector + " found (should be missing)";
@@ -21,8 +21,6 @@ function stubEndpointForHttpRequest(url, json, verb, status) {
 $.mockjaxSettings.logging = false;
 $.mockjaxSettings.responseTime = 0;
 
-Ember.keys(requirejs._eak_seen).filter(function(key) {
-  return (/tests/).test(key);
-}).forEach(function(moduleName) {
-  require(moduleName, null, null, true);
-});
+require('js/helpers/start-app');
+require('js/integration/integration_tests');
+require('js/unit/unit_tests');
