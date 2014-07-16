@@ -1,6 +1,4 @@
 var gulp = require('gulp');
-var gutil = require('gulp-util');
-var debug = require('gulp-debug');
 var karma = require('gulp-karma');
 var concat = require('gulp-concat');
 var gulpFilter = require('gulp-filter');

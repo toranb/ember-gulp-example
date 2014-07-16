@@ -4,7 +4,7 @@ A simple ember.js app using gulp for the client side build step
 To run the ember.js app locally
 
     npm install
-    gulp local
+    gulp
 
     python -m SimpleHTTPServer 3000
 
