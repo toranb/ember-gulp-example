@@ -2,6 +2,7 @@
   "dependencies": {
         "bower": "*",
         "testem": "*",
+        "gulp-load-plugins": "~0.5.1",
         "gulp-es6-module-transpiler": "*",
         "gulp": "*",
         "gulp-debug": "*",
