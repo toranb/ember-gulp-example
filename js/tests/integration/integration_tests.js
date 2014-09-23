@@ -8,7 +8,7 @@ module('integration tests', {
         Person.people = [];
     },
     teardown: function() {
-        $.mockjaxClear();
+        $.fauxjax.clear();
         Ember.run(App, 'destroy');
     }
 });

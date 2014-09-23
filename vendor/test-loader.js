@@ -9,7 +9,7 @@ function missing(selector) {
 }
 
 function stubEndpointForHttpRequest(url, json, verb, status) {
-    $.mockjax({
+    $.fauxjax({
         type: verb || "GET",
         url: url,
         status: status || 200,
@@ -17,9 +17,6 @@ function stubEndpointForHttpRequest(url, json, verb, status) {
         responseText: json
     });
 }
-
-$.mockjaxSettings.logging = false;
-$.mockjaxSettings.responseTime = 0;
 
 require('js/helpers/start-app');
 require('js/integration/integration_tests');

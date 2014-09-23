@@ -7,13 +7,12 @@
 
 <script src="js/dist/deps.min.js"></script>
 
-<script src="js/vendor/jquery-mockjax/jquery.mockjax.js"></script>
+<script src="js/vendor/fauxjax/dist/fauxjax.min.js"></script>
 <script>
 
 var fake = [{firstName: "grunt", lastName: "cli"}, {firstName: "ember", lastName: "js"}];
-$.mockjaxSettings.logging = false;
-$.mockjaxSettings.responseTime = 0;
-$.mockjax({
+$.fauxjax({
+  type: 'GET',
   url: '/api/people',
   dataType: 'json',
   responseText: fake
