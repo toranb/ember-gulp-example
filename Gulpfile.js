@@ -14,7 +14,7 @@ var paths = {
         'js/vendor/handlebars/handlebars.js',
         'js/vendor/ember/ember.min.js',
         'js/vendor/ember-loader/loader.js',
-        'vendor/ember-resolver.js',
+        'js/vendor/ember-resolver/dist/ember-resolver.js',
         'js/dist/tmpl.min.js',
         'js/app/**/*.js'
     ],
@@ -24,7 +24,7 @@ var paths = {
         'js/vendor/ember/ember.js',
         'js/vendor/fauxjax/dist/fauxjax.min.js',
         'js/vendor/ember-loader/loader.js',
-        'vendor/ember-resolver.js',
+        'js/vendor/ember-resolver/dist/ember-resolver.js',
         'js/dist/tmpl.min.js',
         'js/app/**/*.js',
         'js/tests/**/*.js',
