@@ -18,6 +18,8 @@ function stubEndpointForHttpRequest(url, json, verb, status) {
     });
 }
 
+$.fauxjax.settings.responseTime = 0;
+
 require('js/helpers/start-app');
 require('js/integration/integration_tests');
 require('js/unit/unit_tests');
