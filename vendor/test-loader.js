@@ -9,7 +9,7 @@ function missing(selector) {
 }
 
 function stubEndpointForHttpRequest(url, json, verb, status) {
-    $.fauxjax({
+    $.fauxjax.new({
         type: verb || "GET",
         url: url,
         status: status || 200,

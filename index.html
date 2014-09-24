@@ -11,7 +11,7 @@
 <script>
 
 var fake = [{firstName: "grunt", lastName: "cli"}, {firstName: "ember", lastName: "js"}];
-$.fauxjax({
+$.fauxjax.new({
   type: 'GET',
   url: '/api/people',
   dataType: 'json',
