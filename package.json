@@ -13,7 +13,6 @@
         "karma-phantomjs-launcher": "*",
         "karma-qunit": "*",
         "karma": "0.10",
-        "karma-coverage": "~0.2.4",
         "karma-qunit-special-blend": "0.0.1",
         "qunit-special-blend": "0.0.3"
   },
