@@ -1,19 +1,11 @@
 {
   "dependencies": {
         "bower": "*",
-        "testem": "*",
-        "gulp-es6-module-transpiler": "*",
         "gulp": "*",
-        "gulp-debug": "*",
-        "gulp-util": "*",
         "gulp-filter": "*",
-        "gulp-coffee": "*",
-        "gulp-coffeelint": "*",
-        "coffee-script": "*",
         "gulp-concat": "*",
-        "gulp-rev": "*",
-        "gulp-uglify": "*",
-        "gulp-ember-handlebars": "*"
+        "gulp-ember-handlebars": "*",
+        "gulp-es6-module-transpiler": "*"
   },
   "devDependencies": {
         "gulp-karma": "*",
