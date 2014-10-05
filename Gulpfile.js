@@ -1,11 +1,15 @@
 var gulp = require('gulp');
 var karma = require('gulp-karma');
 var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
 var gulpFilter = require('gulp-filter');
 var handlebars = require('gulp-ember-handlebars');
 var transpiler = require('gulp-es6-module-transpiler');
 
 var paths = {
+    jshint: [
+        'js/app/**/*.js'
+    ],
     templates: [
         'js/templates/**/*.handlebars'
     ],
@@ -32,13 +36,16 @@ var paths = {
     ]
 };
 
-var filter = gulpFilter(function(file) {
+var filterFunc = function(file) {
   var vendor = file.path.indexOf('vendor') === -1;
   var templates = file.path.indexOf('dist') === -1;
   return vendor && templates;
-});
+};
 
-gulp.task('default', ['emberhandlebars'], function(){
+gulp.task('default', ['jshint', 'emberhandlebars'], function(){
+    var filter = gulpFilter(function(file) {
+        return filterFunc(file);
+    });
     return gulp.src(paths.concatDist)
         .pipe(filter)
         .pipe(transpiler({
@@ -50,7 +57,10 @@ gulp.task('default', ['emberhandlebars'], function(){
         .pipe(gulp.dest('js/dist/'));
 });
 
-gulp.task('test', ['emberhandlebars'], function(){
+gulp.task('test', ['jshint', 'emberhandlebars'], function(){
+    var filter = gulpFilter(function(file) {
+        return filterFunc(file);
+    });
     return gulp.src(paths.concatTest)
         .pipe(filter)
         .pipe(transpiler({
@@ -71,4 +81,16 @@ gulp.task('emberhandlebars', function(){
         .pipe(handlebars({outputType: 'browser'}))
         .pipe(concat('tmpl.min.js'))
         .pipe(gulp.dest('js/dist/'));
+});
+
+gulp.task('jshint', function() {
+    return gulp.src(paths.jshint)
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jshint.reporter('fail'));
+});
+
+gulp.task('watch', ['default'], function() {
+    gulp.watch(paths.concatDist, ['default']);
+    gulp.watch(paths.templates, ['default']);
 });

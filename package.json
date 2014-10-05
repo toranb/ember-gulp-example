@@ -3,6 +3,8 @@
         "bower": "*",
         "gulp": "*",
         "gulp-filter": "*",
+        "gulp-jshint": "*",
+        "jshint-stylish": "*",
         "gulp-concat": "*",
         "gulp-ember-handlebars": "*",
         "gulp-es6-module-transpiler": "*"
