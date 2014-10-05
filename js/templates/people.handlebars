@@ -3,10 +3,18 @@
 <button class="submit" {{action "addPerson"}}>Add</button>
 <br />
 <table>
+<thead>
+<tr>
+  <th>name</th>
+  <th>action</th>
+<tr>
+</thead>
+<tbody>
 {{#each person in controller}}
 <tr>
   <td class="name">{{person.fullName}}</td>
   <td><button class="delete" {{action "deletePerson" person}}>Delete</button></td>
 </tr>
 {{/each}}
+</tbody>
 </table>

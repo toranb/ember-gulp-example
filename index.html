@@ -11,11 +11,26 @@
 <script>
 
 var fake = [{firstName: "grunt", lastName: "cli"}, {firstName: "ember", lastName: "js"}];
+
 $.fauxjax.new({
   type: 'GET',
   url: '/api/people',
   dataType: 'json',
+  contentType: "application/json",
+  cache: false,
   responseText: fake
+});
+
+var data = JSON.stringify({firstName: 'foo', lastName: 'bar'});
+
+$.fauxjax.new({
+  type: 'POST',
+  url: '/api/people',
+  dataType: 'json',
+  contentType: "application/json",
+  cache: false,
+  data: data,
+  responseText: {}
 });
 
 $.fauxjax.settings.responseTime = 0;

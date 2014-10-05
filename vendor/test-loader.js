@@ -8,13 +8,16 @@ function missing(selector) {
     equal(element, 0, error);
 }
 
-function stubEndpointForHttpRequest(url, json, verb, status) {
+function stubEndpointForHttpRequest(url, json, verb, status, data) {
     $.fauxjax.new({
         type: verb || "GET",
         url: url,
         status: status || 200,
         dataType: 'json',
-        responseText: json
+        contentType: 'application/json',
+        responseText: json,
+        data: data || undefined,
+        cache: false,
     });
 }
 
