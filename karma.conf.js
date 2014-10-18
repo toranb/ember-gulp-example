@@ -2,7 +2,7 @@ module.exports = function(karma) {
     karma.set({
         basePath: '',
         files: [
-          "js/dist/deps.min.js"
+          "js/dist/**/*.js"
         ],
         port: 9876,
         runnerPort: 9100,

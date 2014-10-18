@@ -3,6 +3,7 @@
         "bower": "*",
         "gulp": "*",
         "gulp-filter": "*",
+        "gulp-clean": "*",
         "gulp-concat": "*",
         "gulp-ember-handlebars": "*",
         "gulp-es6-module-transpiler": "*"

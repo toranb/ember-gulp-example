@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var karma = require('gulp-karma');
+var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var gulpFilter = require('gulp-filter');
 var handlebars = require('gulp-ember-handlebars');
@@ -58,7 +59,6 @@ gulp.task('test', ['emberhandlebars'], function(){
             prefix: "js"
         }))
         .pipe(filter.restore())
-        .pipe(concat('deps.min.js'))
         .pipe(gulp.dest('js/dist/'))
         .pipe(karma({
             configFile: 'karma.conf.js',
@@ -66,7 +66,12 @@ gulp.task('test', ['emberhandlebars'], function(){
         }));
 });
 
-gulp.task('emberhandlebars', function(){
+gulp.task('clean', function(){
+    return gulp.src('js/dist/')
+        .pipe(clean())
+});
+
+gulp.task('emberhandlebars', ['clean'], function(){
     return gulp.src(paths.templates)
         .pipe(handlebars({outputType: 'browser'}))
         .pipe(concat('tmpl.min.js'))
