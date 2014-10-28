@@ -3,7 +3,7 @@ var karma = require('gulp-karma');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var gulpFilter = require('gulp-filter');
-var handlebars = require('gulp-ember-handlebars');
+var handlebars = require('gulp-ember-handlebarz');
 var transpiler = require('gulp-es6-module-transpiler');
 
 var paths = {

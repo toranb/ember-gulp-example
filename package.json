@@ -5,7 +5,7 @@
         "gulp-filter": "*",
         "gulp-clean": "*",
         "gulp-concat": "*",
-        "gulp-ember-handlebars": "*",
+        "gulp-ember-handlebarz": "1.7.3",
         "gulp-es6-module-transpiler": "*"
   },
   "devDependencies": {
