@@ -3,9 +3,9 @@
         "bower": "*",
         "gulp": "*",
         "gulp-filter": "*",
-        "gulp-clean": "*",
+        "gulp-rimraf": "*",
         "gulp-concat": "*",
-        "gulp-ember-handlebarz": "1.7.3",
+        "gulp-ember-handlebarz": "1.7.4",
         "gulp-es6-module-transpiler": "*"
   },
   "devDependencies": {

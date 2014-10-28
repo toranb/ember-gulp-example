@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var karma = require('gulp-karma');
-var clean = require('gulp-clean');
+var rimraf = require('gulp-rimraf');
 var concat = require('gulp-concat');
 var gulpFilter = require('gulp-filter');
 var handlebars = require('gulp-ember-handlebarz');
@@ -67,8 +67,8 @@ gulp.task('test', ['emberhandlebars'], function(){
 });
 
 gulp.task('clean', function(){
-    return gulp.src('js/dist/')
-        .pipe(clean())
+    return gulp.src('js/dist/', { read: false })
+        .pipe(rimraf());
 });
 
 gulp.task('emberhandlebars', ['clean'], function(){
